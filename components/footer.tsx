@@ -1,13 +1,14 @@
 import Link from "next/link"
 
 const footerLinks = [
-  { href: "#about", label: "私たちについて" },
-  { href: "#value", label: "OUR VALUE" },
-  { href: "#brands", label: "ブランド一覧" },
-  { href: "#news", label: "ニュース" },
+  { href: "/#about", label: "私たちについて" },
+  { href: "/#value", label: "OUR VALUE" },
+  { href: "/#brands", label: "ブランド一覧" },
+  { href: "/#news", label: "ニュース" },
   { href: "/careers", label: "採用" },
   { href: "/privacy", label: "プライバシーポリシー" },
-  { href: "#contact", label: "お問い合わせ" },
+  { href: "/legal", label: "特定商取引法に基づく表記" },
+  { href: "/#contact", label: "お問い合わせ" },
 ]
 
 export function Footer() {
@@ -20,7 +21,7 @@ export function Footer() {
             <Link href="/" className="flex items-center">
               <div>
                 <p className="text-lg font-medium tracking-wider text-white">株式会社食品計画</p>
-                <p className="text-[10px] tracking-widest text-gray-500">SHOKUHIN KEIKAKU CO., LTD.</p>
+                <p className="text-[10px] tracking-widest text-gray-500">Shokuhin Keikaku Co. Ltd.</p>
               </div>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-400">
@@ -52,7 +53,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} SHOKUHIN KEIKAKU CO., LTD. All Rights Reserved.
+            © {new Date().getFullYear()} Shokuhin Keikaku Co. Ltd. All Rights Reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="text-xs text-gray-500 transition-colors hover:text-white">

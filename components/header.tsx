@@ -8,13 +8,14 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { href: "#about", label: "私たちについて" },
-    { href: "#value", label: "OUR VALUE" },
-    { href: "#brands", label: "ブランド一覧" },
-    { href: "#news", label: "ニュース" },
+    { href: "/#about", label: "私たちについて" },
+    { href: "/#value", label: "OUR VALUE" },
+    { href: "/#brands", label: "ブランド一覧" },
+    { href: "/#news", label: "ニュース" },
     { href: "/careers", label: "採用" },
     { href: "/privacy", label: "プライバシーポリシー" },
-    { href: "#contact", label: "お問い合わせ" },
+    { href: "/legal", label: "特定商取引法に基づく表記" },
+    { href: "/#contact", label: "お問い合わせ" },
   ]
 
   return (

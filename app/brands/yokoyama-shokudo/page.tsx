@@ -10,19 +10,20 @@ export const metadata = {
 const menu = {
   ramen: [
     { name: "ラーメン", price: "1,000円" },
-    { name: "チャーシュー麺", price: "1,360円" },
+    { name: "チャーシューメン", price: "1,360円" },
+    { name: "大盛", price: "+150円" },
   ],
   toppings: [
     { name: "玉ねぎ", price: "100円" },
     { name: "メンマ", price: "200円" },
     { name: "海苔", price: "200円" },
-    { name: "麺大盛り", price: "150円" },
     { name: "生卵", price: "100円" },
   ],
   abura: [
     { name: "油そば", price: "1,000円" },
     { name: "チャーシュー油そば", price: "1,360円" },
   ],
+  aburaNote: "※大盛は並盛と同一料金です",
   morning: [
     { name: "朝ラーセット", price: "1,000円" },
     { name: "かけラーメン", price: "500円" },
@@ -148,6 +149,7 @@ export default function YokoyamaShokudoPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-sm text-gray-500">{menu.aburaNote}</p>
             </div>
 
             {/* Morning Menu */}
@@ -295,7 +297,7 @@ export default function YokoyamaShokudoPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="aspect-[16/9] w-full overflow-hidden border border-gray-200 bg-gray-100 md:aspect-[21/9]">
             <iframe
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=東京都武蔵野市吉祥寺南町1丁目9-11&zoom=17"
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=八王子ラーメン横山食堂+吉祥寺店&zoom=17"
               width="100%"
               height="100%"
               style={{ border: 0 }}

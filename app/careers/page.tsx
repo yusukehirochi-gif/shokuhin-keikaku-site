@@ -133,7 +133,7 @@ export default function CareersPage() {
             <div className="space-y-4 text-gray-600">
               <p className="text-xl font-medium text-[#0d1b2a]">時給 1,280円〜</p>
               <p className="text-sm">研修期間：時給1,230円</p>
-              <p className="text-sm">（売り上げに応じたインセンティブあり）</p>
+              <p className="text-sm">（業績連動でのインセンティブあり）</p>
               
               <div className="mt-6 space-y-2">
                 <p className="font-medium text-[#0d1b2a]">福利厚生</p>
@@ -157,7 +157,7 @@ export default function CareersPage() {
 
               <div className="mt-6 space-y-2">
                 <p className="font-medium text-[#0d1b2a]">試用期間</p>
-                <p>1〜2ヶ月（店長候補としてOJTを行います）</p>
+                <p>1〜2ヶ月（OJTを行います）</p>
                 <p className="text-sm text-gray-500">※試用期間中は給与・勤務時間条件が異なる場合があります</p>
               </div>
             </div>
