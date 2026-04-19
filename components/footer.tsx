@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Logo } from "./logo"
 
 const footerLinks = [
@@ -13,6 +16,21 @@ const footerLinks = [
 ]
 
 export function Footer() {
+  const router = useRouter()
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault()
+      const hash = href.substring(1)
+      router.push("/")
+      setTimeout(() => {
+        const element = document.querySelector(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    }
+  }
   return (
     <footer className="bg-[#0d1b2a] py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -35,6 +53,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                   className="block text-sm text-gray-400 transition-colors hover:text-white"
                 >
                   {link.label}

@@ -55,6 +55,10 @@ const shopInfo = {
     { name: "食べログ", url: "https://tabelog.com/tokyo/A1320/A132001/13309870/" },
     { name: "ラーメンデータベース", url: "https://ramendb.supleks.jp/s/165759.html" },
   ],
+  sns: [
+    { name: "X", url: "https://x.com/yokoyamashokudo" },
+    { name: "Instagram", url: "https://www.instagram.com/yokoyamashokudo/" },
+  ],
 }
 
 export default function YokoyamaShokudoPage() {
@@ -264,6 +268,24 @@ export default function YokoyamaShokudoPage() {
                       <p className="mb-1 text-xs tracking-wider text-gray-400">アクセス</p>
                       {shopInfo.access.map((line, index) => (
                         <p key={index} className="text-[#0d1b2a]">{line}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* SNS */}
+                  <div className="pt-4">
+                    <p className="mb-3 text-xs tracking-wider text-gray-400">SNS</p>
+                    <div className="flex flex-wrap gap-4">
+                      {shopInfo.sns.map((link, index) => (
+                        <a
+                          key={index}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="border border-[#d4af37] px-4 py-2 text-sm text-[#d4af37] transition-colors hover:bg-[#d4af37] hover:text-[#0d1b2a]"
+                        >
+                          {link.name}
+                        </a>
                       ))}
                     </div>
                   </div>
