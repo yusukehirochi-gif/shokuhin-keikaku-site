@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Logo } from "./logo"
 
 const footerLinks = [
   { href: "/#about", label: "私たちについて" },
@@ -18,11 +19,8 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo & Description */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center">
-              <div>
-                <p className="text-lg font-medium tracking-wider text-white">株式会社食品計画</p>
-                <p className="text-[10px] tracking-widest text-gray-500">Shokuhin Keikaku Co. Ltd.</p>
-              </div>
+            <Link href="/">
+              <Logo />
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-gray-400">
               飲食店M&Aを通じて、地域の食文化の維持・継承を目指します。日本の食の未来を次世代へ繋ぐために。
