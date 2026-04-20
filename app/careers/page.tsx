@@ -1,230 +1,151 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { MapPin, Clock, Banknote, Users, Building2, Phone } from "lucide-react"
+import { CheckCircle2, MapPin, CreditCard, Utensils, Clock, BadgeJapaneseYen } from "lucide-react"
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "採用情報 | 株式会社食品計画",
-  description: "株式会社食品計画の採用情報。八王子ラーメン店のアルバイトを募集しています。",
+  description: "株式会社食品計画の採用情報ページです。一緒に飲食業界を盛り上げてくれる仲間を募集しています。",
 }
 
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative flex min-h-[40vh] items-center justify-center bg-[#0d1b2a] pt-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0d1b2a]/50" />
-        <div className="relative z-10 text-center px-4">
-          <p className="mb-3 text-sm tracking-[0.3em] text-[#d4af37]">CAREERS</p>
-          <h1 className="text-3xl font-medium tracking-wide text-white sm:text-4xl md:text-5xl">
-            採用情報
+      {/* ヒーローセクション（ファーストビュー） */}
+      <section className="bg-[#0d1b2a] text-white py-20 px-4 pt-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-[#d4af37] font-semibold tracking-wider text-sm mb-4 block">RECRUIT / アルバイト募集</span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            八王子ラーメン店<br className="md:hidden" /> オープニングスタッフ
           </h1>
-          <div className="mx-auto mt-6 h-px w-16 bg-[#d4af37]" />
+          <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+            吉祥寺駅徒歩3分。キャッシュレス特化で接客ストレスを軽減！<br className="hidden md:block"/>
+            ラーメンが好き、飲食が好きな方、一緒に新しいお店を作りませんか？
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Button asChild size="lg" className="bg-[#d4af37] hover:bg-[#c9a432] text-[#0d1b2a] w-full sm:w-auto text-lg px-8 py-6 rounded-full font-bold shadow-lg">
+              <Link href="/contact">今すぐ応募する（1分で完了）</Link>
+            </Button>
+            <span className="text-sm text-slate-400">※面接はリモートで1〜2回のみ</span>
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          {/* Job Title */}
-          <div className="mb-12 text-center">
-            <div className="mb-4 inline-block border border-[#d4af37] px-4 py-1">
-              <span className="text-sm tracking-wider text-[#d4af37]">アルバイト募集</span>
-            </div>
-            <h2 className="text-2xl font-medium text-[#0d1b2a] sm:text-3xl">
-              八王子ラーメン店スタッフ
-            </h2>
+      {/* 働くメリット（ハイライト） */}
+      <section className="py-16 px-4">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-[#0d1b2a]">働く3つのメリット</h2>
+            <div className="w-16 h-1 bg-[#d4af37] mx-auto mt-4"></div>
           </div>
-
-          {/* Appeal Points */}
-          <div className="mb-12 grid gap-4 sm:grid-cols-2">
-            <div className="border border-gray-200 bg-gray-50 p-6 text-center">
-              <p className="text-lg font-medium text-[#0d1b2a]">吉祥寺駅徒歩3分</p>
-            </div>
-            <div className="border border-gray-200 bg-gray-50 p-6 text-center">
-              <p className="text-lg font-medium text-[#0d1b2a]">キャッシュレスオンリーで<br />キッチン作業に集中できる</p>
-            </div>
-          </div>
-
-          {/* Job Description */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              仕事内容
-            </h3>
-            <div className="space-y-4 text-gray-600 leading-relaxed">
-              <p>
-                キッチン・ホールサービス業務全般をお任せします。
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+              <div className="w-16 h-16 bg-amber-100 text-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-6">
+                <CreditCard size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[#0d1b2a]">完全キャッシュレス</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                お会計はすべて電子決済。レジ締めや現金での釣銭ミスの心配がなく、キッチン作業や接客にしっかり集中できます。
               </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>仕込み、調理</li>
-                <li>接客、料理提供</li>
-                <li>キャッシュレス端末操作</li>
-                <li>開店・閉店作業</li>
-              </ul>
-              <p className="mt-6">
-                まずは笑顔で元気よくお客様を迎えていただければOKです。徐々にできることを増やしてください。
+            </div>
+            
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+              <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MapPin size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[#0d1b2a]">吉祥寺駅から徒歩3分</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                雨の日でも通勤ラクラク。仕事終わりの買い物や用事にも便利な好立地です。交通費も規定内で支給します。
               </p>
-              <p>
-                アナタらしい働きで、お客様・職場を盛り上げてください。お店やラーメンに関するご意見も大歓迎です。ながく愛されるお店を、一緒につくっていきましょう。
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Utensils size={32} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-[#0d1b2a]">嬉しい賄い割引あり</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                美味しい八王子ラーメンをスタッフだけの特別価格で。ラーメン好きにはたまらない特典です。
               </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Requirements */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              <Users className="mr-2 inline-block h-5 w-5 text-[#d4af37]" />
-              求めている人材
-            </h3>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <p className="mb-3 text-sm font-medium text-[#d4af37]">必須条件</p>
-                <p className="text-gray-600">なし（経験・学歴不問）</p>
-              </div>
-              <div>
-                <p className="mb-3 text-sm font-medium text-[#d4af37]">歓迎条件</p>
-                <p className="text-gray-600">飲食店勤務経験（アルバイト経験でも歓迎）</p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <p className="mb-3 text-sm font-medium text-[#d4af37]">求められる人材</p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-600">
-                <li>接客が好きな方</li>
-                <li>笑顔で元気よく挨拶できる方</li>
-                <li>調理経験のある方（自炊でもOK）</li>
-                <li>積極的に行動し意見を言える方</li>
-              </ul>
-            </div>
+      {/* 募集要項 */}
+      <section className="py-16 px-4 bg-white border-y border-gray-200">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#0d1b2a]">募集要項</h2>
           </div>
 
-          {/* Working Hours */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              <Clock className="mr-2 inline-block h-5 w-5 text-[#d4af37]" />
-              勤務時間
-            </h3>
-            <div className="space-y-3 text-gray-600">
-              <p><span className="font-medium text-[#0d1b2a]">勤務時間：</span>終日、17:00〜22:00</p>
-            </div>
-          </div>
-
-          {/* Location */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              <MapPin className="mr-2 inline-block h-5 w-5 text-[#d4af37]" />
-              勤務地
-            </h3>
-            <div className="space-y-3 text-gray-600">
-              <p>〒180-0003<br />東京都武蔵野市吉祥寺南町1-9-11 第2吉祥寺じぞうビル2階E号室</p>
-              <p><span className="font-medium text-[#0d1b2a]">アクセス：</span>吉祥寺駅 徒歩3分</p>
-              <p className="text-sm text-gray-500">※転居を伴わない転勤あり（複数店舗出店までは転勤なし）</p>
-            </div>
-          </div>
-
-          {/* Salary */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              <Banknote className="mr-2 inline-block h-5 w-5 text-[#d4af37]" />
-              給与・待遇
-            </h3>
-            <div className="space-y-4 text-gray-600">
-              <p className="text-xl font-medium text-[#0d1b2a]">時給 1,280円〜</p>
-              <p className="text-sm">研修期間：時給1,230円</p>
-              <p className="text-sm">（業績連動でのインセンティブあり）</p>
-              
-              <div className="mt-6 space-y-2">
-                <p className="font-medium text-[#0d1b2a]">福利厚生</p>
-                <ul className="list-disc pl-6 space-y-1">
-                  <li>研修期間あり</li>
-                  <li>業績連動でのインセンティブあり</li>
-                  <li>賄い割引あり</li>
-                  <li>交通費：上限500円/日（実費精算）</li>
-                </ul>
-              </div>
-
-              <div className="mt-6 space-y-2">
-                <p className="font-medium text-[#0d1b2a]">社会保険</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="border border-gray-300 px-3 py-1 text-sm">雇用保険</span>
-                  <span className="border border-gray-300 px-3 py-1 text-sm">労災保険</span>
-                  <span className="border border-gray-300 px-3 py-1 text-sm">健康保険</span>
-                  <span className="border border-gray-300 px-3 py-1 text-sm">厚生年金</span>
+          <div className="bg-slate-50 rounded-xl overflow-hidden border border-gray-200">
+            <div className="divide-y divide-gray-200">
+              <div className="flex flex-col sm:flex-row">
+                <div className="py-5 px-6 bg-slate-100 text-[#0d1b2a] font-semibold sm:w-1/3 flex items-center gap-2">
+                  <BadgeJapaneseYen className="text-slate-500" size={18} /> 給与
+                </div>
+                <div className="py-5 px-6 text-slate-700 sm:w-2/3">
+                  <span className="text-xl font-bold text-[#d4af37]">時給 1,280円〜</span><br/>
+                  <span className="text-sm text-gray-500">※研修期間（1〜2ヶ月）：時給1,230円<br/>※業績連動でのインセンティブあり！</span>
                 </div>
               </div>
-
-              <div className="mt-6 space-y-2">
-                <p className="font-medium text-[#0d1b2a]">試用期間</p>
-                <p>1〜2ヶ月（OJTを行います）</p>
-                <p className="text-sm text-gray-500">※試用期間中は給与・勤務時間条件が異なる場合があります</p>
+              <div className="flex flex-col sm:flex-row">
+                <div className="py-5 px-6 bg-slate-100 text-[#0d1b2a] font-semibold sm:w-1/3 flex items-center gap-2">
+                  <CheckCircle2 className="text-slate-500" size={18} /> 仕事内容
+                </div>
+                <div className="py-5 px-6 text-slate-700 sm:w-2/3">
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>仕込み、調理</li>
+                    <li>接客、料理提供</li>
+                    <li>キャッシュレス端末操作</li>
+                    <li>開店・閉店作業</li>
+                  </ul>
+                  <p className="mt-2 text-sm text-gray-600">まずは笑顔で元気よくお客様を迎えていただければOKです！</p>
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row">
+                <div className="py-5 px-6 bg-slate-100 text-[#0d1b2a] font-semibold sm:w-1/3 flex items-center gap-2">
+                  <Clock className="text-slate-500" size={18} /> 勤務時間
+                </div>
+                <div className="py-5 px-6 text-slate-700 sm:w-2/3">
+                  終日、17:00〜22:00（シフト制）
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row">
+                <div className="py-5 px-6 bg-slate-100 text-[#0d1b2a] font-semibold sm:w-1/3">求める人材</div>
+                <div className="py-5 px-6 text-slate-700 sm:w-2/3">
+                  <span className="font-semibold text-[#d4af37]">経験・学歴不問！</span><br/>
+                  【歓迎】飲食店勤務経験（アルバイト経験でも歓迎）、接客が好きな方、調理経験のある方（自炊でもOK）
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row">
+                <div className="py-5 px-6 bg-slate-100 text-[#0d1b2a] font-semibold sm:w-1/3">福利厚生・待遇</div>
+                <div className="py-5 px-6 text-slate-700 sm:w-2/3">
+                  賄い割引あり / 交通費支給（上限500円/日）/ 各種社会保険完備（雇用・労災・健康・厚生年金）
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Work Environment */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              職場環境
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              経営陣と密にコミュニケーション可能で、柔軟にご意見を取り入れられる環境です。
-            </p>
-            <p className="mt-3 text-sm text-gray-500">
-              喫煙所：屋外あり（吉祥寺駅前の一般共有喫煙スペース、店舗より徒歩3分）
-            </p>
-          </div>
-
-          {/* Selection Process */}
-          <div className="mb-12">
-            <h3 className="mb-6 border-b border-[#d4af37] pb-3 text-lg font-medium text-[#0d1b2a]">
-              選考プロセス
-            </h3>
-            <p className="text-gray-600">
-              選考はリモート面接1〜2回を予定しております。
-            </p>
-          </div>
-
-          {/* Company Info */}
-          <div className="mb-12 bg-gray-50 p-6 sm:p-8">
-            <h3 className="mb-6 text-lg font-medium text-[#0d1b2a]">
-              <Building2 className="mr-2 inline-block h-5 w-5 text-[#d4af37]" />
-              企業情報
-            </h3>
-            <dl className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:gap-8">
-                <dt className="mb-1 w-32 shrink-0 text-sm text-gray-500">企業名</dt>
-                <dd className="text-[#0d1b2a]">株式会社食品計画</dd>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:gap-8">
-                <dt className="mb-1 w-32 shrink-0 text-sm text-gray-500">本社所在地</dt>
-                <dd className="text-[#0d1b2a]">東京都渋谷区道玄坂1-16-6 二葉ビル8B</dd>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:gap-8">
-                <dt className="mb-1 w-32 shrink-0 text-sm text-gray-500">
-                  <Phone className="mr-1 inline-block h-4 w-4" />
-                  電話番号
-                </dt>
-                <dd className="text-[#0d1b2a]">
-                  <a href="tel:08011031411" className="transition-colors hover:text-[#d4af37]">
-                    080-1103-1411
-                  </a>
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <p className="mb-6 text-gray-600">ご応募・お問い合わせはこちらから</p>
-            <Link
-              href="/contact"
-              className="inline-block border border-[#d4af37] bg-[#d4af37] px-10 py-4 text-sm tracking-widest text-[#0d1b2a] transition-all hover:bg-transparent hover:text-[#d4af37]"
-            >
-              応募する
-            </Link>
-          </div>
+      {/* ボトムCTA */}
+      <section className="py-20 px-4 bg-[#0d1b2a] text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-6">あなたのご応募をお待ちしています</h2>
+          <p className="text-slate-300 mb-8">
+            面接はリモートで行いますので、まずはお気軽にご応募・お問い合わせください。<br/>
+            お店やラーメンに関するご意見も大歓迎です！
+          </p>
+          <Button asChild size="lg" className="bg-[#d4af37] hover:bg-[#c9a432] text-[#0d1b2a] text-xl px-12 py-8 rounded-full font-bold shadow-2xl transition-transform hover:scale-105">
+            <Link href="/contact">応募フォームへ進む</Link>
+          </Button>
         </div>
       </section>
 
