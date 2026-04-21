@@ -10,9 +10,57 @@ export const metadata: Metadata = {
   description: "株式会社食品計画の採用情報ページです。一緒に飲食業界を盛り上げてくれる仲間を募集しています。",
 }
 
+const jobPostingJsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "八王子ラーメン横山食堂 吉祥寺店 アルバイトスタッフ",
+  "description": "吉祥寺駅徒歩3分のラーメン店でのアルバイト募集。接客、調理、店舗運営に携わっていただきます。メニュー開発にも参加可能。学歴・経験不問、未経験者歓迎。",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "株式会社食品計画",
+    "value": "yokoyama-shokudo-kichijoji-2025"
+  },
+  "datePosted": "2025-05-17",
+  "validThrough": "2026-12-31T23:59:59+09:00",
+  "employmentType": "PART_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "株式会社食品計画",
+    "sameAs": "https://www.shokuhinkeikaku.com/",
+    "logo": "https://www.shokuhinkeikaku.com/images/logo.png"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "吉祥寺本町1丁目",
+      "addressLocality": "武蔵野市",
+      "addressRegion": "東京都",
+      "postalCode": "180-0004",
+      "addressCountry": "JP"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": {
+      "@type": "QuantitativeValue",
+      "value": 1280,
+      "unitText": "HOUR"
+    }
+  },
+  "workHours": "17:00-22:00",
+  "jobBenefits": "交通費支給、賄い割引あり、社会保険完備",
+  "skills": "未経験歓迎、学歴不問"
+}
+
 export default function CareersPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingJsonLd) }}
+      />
       <Header />
 
       {/* ヒーローセクション */}
