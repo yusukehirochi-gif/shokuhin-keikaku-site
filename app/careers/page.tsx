@@ -85,7 +85,7 @@ export default function CareersPage() {
             一緒にお店を作っていきませんか？
           </p>
           <Button asChild size="lg" className="bg-[#d4af37] hover:bg-[#e6c555] text-[#0d1b2a] text-xl px-10 py-7 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105">
-            <Link href="/contact">今すぐ応募する!</Link>
+            <Link href="/careers/apply">今すぐ応募する!</Link>
           </Button>
           <p className="mt-4 text-sm text-slate-400">※応募は1分で完了・面接はリモートOK</p>
         </div>
@@ -130,7 +130,7 @@ export default function CareersPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-[#0d1b2a] text-center">メニュー開発に携われる</h3>
               <p className="text-gray-600 text-sm leading-relaxed text-center">
-                「こんなラーメンがあったらいいな」を店主と一緒に形にできます。自分の考えた一杯をお客様に食べていただける喜びは格別です！
+                「こんなラーメンがあったらいいな」を店主と一緒に形にできます。自分の考えた一杯をお客様に食べていただける喜��は格別です！
               </p>
             </div>
 
@@ -311,7 +311,7 @@ export default function CareersPage() {
             あなたの「こんなラーメンを作りたい」というアイデアもお聞かせください！
           </p>
           <Button asChild size="lg" className="bg-[#d4af37] hover:bg-[#e6c555] text-[#0d1b2a] text-xl px-12 py-8 rounded-full font-bold shadow-2xl transition-all hover:scale-105">
-            <Link href="/contact">応募フォームへ進む</Link>
+            <Link href="/careers/apply">応募フォームへ進む</Link>
           </Button>
           <p className="mt-6 text-sm text-slate-400">ご質問だけでもお気軽にどうぞ！</p>
         </div>
