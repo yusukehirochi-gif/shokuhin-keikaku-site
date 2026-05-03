@@ -46,7 +46,6 @@ const shopInfo = {
     weekday: "平日 8:00〜14:00",
     weekend: "土日・祝日 10:00〜15:00",
   },
-  closed: "金曜日",
   access: [
     "JR中央線 / 吉祥寺駅 徒歩3分",
     "京王井の頭線 / 吉祥寺駅 徒歩3分",
@@ -254,7 +253,6 @@ export default function YokoyamaShokudoPage() {
                       <p className="mb-1 text-xs tracking-wider text-gray-400">営業時間</p>
                       <p className="text-[#0d1b2a]">{shopInfo.hours.weekday}</p>
                       <p className="text-[#0d1b2a]">{shopInfo.hours.weekend}</p>
-                      <p className="mt-2 text-sm text-gray-500">定休日：{shopInfo.closed}</p>
                     </div>
                   </div>
                 </div>
